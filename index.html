@@ -9,10 +9,24 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="">Datos</h1>
+        <h1 class="text-center">Products List</h1>
     
-        <button id="traer" onclick="traerDatos()" class="btn btn-primary">Buscar</button>
+        <button id="traer" onclick="traerDatos()" class="btn btn-primary">Find All</button>
     
+        <div>
+        <table class="table table-borderless" id="list-products">
+            <thead>
+                <tr>
+                  <th scope="col">Name</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+        </table>
+    </div>
+
     </div>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.js"></script>
