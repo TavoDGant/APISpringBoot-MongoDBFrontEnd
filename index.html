@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,30 +8,35 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <title>Spring Boot - Mongo DB</title>
 </head>
+
 <body>
     <div class="container">
         <h1 class="text-center">Products List</h1>
-    
-        <button id="traer" onclick="traerDatos()" class="btn btn-primary">Find All</button>
-    
+
+        <div class="input-group mb-3">
+            <input id="search-products" type="text" class="form-control" placeholder="Search Products" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-dark" type="button" id="button-addon2" onclick="searchProducts()">Search</button>
+          </div>
+        
         <div>
-        <table class="table table-borderless" id="list-products">
-            <thead>
-                <tr>
-                  <th scope="col">Name</th>
-                  <th scope="col">Description</th>
-                  <th scope="col">Price</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-        </table>
-    </div>
+            <table class="table table-borderless" id="list-products">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
 
     </div>
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/requests.js"></script>
-    
+
 </body>
+
 </html>
