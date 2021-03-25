@@ -1,5 +1,11 @@
 const tabla = document.querySelector("#list-products tbody");
 
+document.getElementById("search-products").onkeypress = function(event){
+    if (event.keyCode == 13 || event.which == 13){
+        searchProducts();
+    }
+};
+
 function traerDatos(){
     cleanBody();
     fetch('https://spring-boot-mongo-db.herokuapp.com/allProducts')
@@ -13,6 +19,7 @@ function traerDatos(){
                 <td>${prodName.replace(/\b\w/g, l => l.toUpperCase())}</td>
                 <td>${prodDesc.replace(/\b\w/g, l => l.toUpperCase())}</td>
                 <td>$ ${products.price}</td>
+                <td><button href="#" class="btn btn-secondary">Edit</button></td>
             `;
             tabla.appendChild(row);
         });
@@ -39,6 +46,7 @@ function searchProducts(){
                 <td>${prodName.replace(/\b\w/g, l => l.toUpperCase())}</td>
                 <td>${prodDesc.replace(/\b\w/g, l => l.toUpperCase())}</td>
                 <td>$ ${products.price}</td>
+                <td><button href="#" class="btn btn-secondary">Edit</button></td>
             `;
             tabla.appendChild(row);
         });
