@@ -43,6 +43,7 @@ function getProducts(data){
             <td>${prodDesc.replace(/\b\w/g, l => l.toUpperCase())}</td>
             <td>$ ${products.price}</td>
             <td><a href="updateProduct.html" class="btn btn-secondary">Edit</a></td>
+            <td><button class="btn btn-secondary" onclick="deleteProduct('${prodId}')">Delete</button></td>
         `;
         tabla.appendChild(row);
     });
@@ -51,6 +52,24 @@ function getProducts(data){
 function cleanBody(){
     var tabClear = document.querySelector("tbody");
     tabClear.innerHTML = "";
+}
+
+async function deleteProduct(id){
+    console.log(`deleted id ${id}`);
+    await fetch('https://spring-boot-mongo-db.herokuapp.com/deleteProduct/'+id, {
+        method: 'DELETE',
+        headers: {
+            'Content-type': 'application/json'
+        }
+    }).then(res => res.text()) // or res.json()
+    .then(res => {
+        alert("Deleted");  
+        traerDatos();      
+    });
+}
+
+function reloadPage(){
+    location.reload(true);
 }
 
 traerDatos();
