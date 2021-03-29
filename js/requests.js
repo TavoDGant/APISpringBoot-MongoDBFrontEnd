@@ -131,9 +131,7 @@ traerDatos();
 /*-------------MODALS*---------------------*/
 // When the user clicks the button, open the modal 
 function updateProductModel(id, name, description, price) {
-    console.log(id);
     document.getElementById("noId").value = id;
-    //sconsole.log();
     document.getElementById("updateNameProduct").value = name;
     document.getElementById("updateDescriptionProduct").value = description;
     document.getElementById("updatePriceProduct").value = price;
