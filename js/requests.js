@@ -79,7 +79,21 @@ async function deleteProduct(id){
 }
 
 function editProduct(){
+    const url = 'https://spring-boot-mongo-db.herokuapp.com/updateProduct';
+    
+    var data = { id: document.getElementById("noId").value,
+                 name: document.getElementById("updateNameProduct").value,
+                 description: document.getElementById("updateDescriptionProduct").value,
+                 price: document.getElementById("updatePriceProduct").value
+                };
 
+    fetch(url, {
+        method: 'PUT', // or 'PUT'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(cleanForm());
 }
 
 function addProduct(){
@@ -114,12 +128,12 @@ function cleanForm(){
 
 traerDatos();
 
-
 /*-------------MODALS*---------------------*/
-
 // When the user clicks the button, open the modal 
 function updateProductModel(id, name, description, price) {
     console.log(id);
+    document.getElementById("noId").value = id;
+    //sconsole.log();
     document.getElementById("updateNameProduct").value = name;
     document.getElementById("updateDescriptionProduct").value = description;
     document.getElementById("updatePriceProduct").value = price;
