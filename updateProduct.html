@@ -5,46 +5,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/modal.css">
     <title>Update Product</title>
 </head>
 
-<body>
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
 
-    <div class="container">
+<!-- The Modal -->
+<div id="myModal" class="modal">
 
-        <a href="index.html" class="link-secondary">Back</a>
-        <div class="text-center">
-            <h1 class="text-center">Update Product</h1>
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+    <input type="text" name="product" id="">
+    <input type="text" name="" id="">
+    <input type="number" name="asd" id="">
+  </div>
 
-            <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Name</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="nameProduct" placeholder="Javascript">
-                </div>
-            </div>
+</div>
 
-            <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Description</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="descriptionProduct" placeholder="Javascript for ...">
-                </div>
-            </div>
-
-            <div class="mb-3 row">
-                <label class="col-sm-2 col-form-label">Price</label>
-                <div class="col-sm-10">
-                    <input type="number" class="form-control" id="priceProduct" placeholder="4.99">
-                </div>
-            </div>
-
-            <button class="btn btn-dark" onclick="addProduct()" data-bs-dismiss="alert">Update</button>
-        </div>
-    </div>
 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.js"></script>
-    <script src="js/requests.js"></script>
+    <script src="js/prueba.js"></script>
 </body>
 
 </html>

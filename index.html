@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/modal.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <title>Spring Boot - Mongo DB</title>
 </head>
@@ -16,7 +17,7 @@
         <div class="input-group mb-3">
             <input id="search-products" type="text" class="form-control" placeholder="Search Products" aria-label="Recipient's username" aria-describedby="button-addon2">
             <button class="btn btn-dark" type="button" id="button-addon2" onclick="searchProducts()">Search</button>
-            <a class="btn btn-secondary" type="button" id="button-addon2" href="addProduct.html">Add New Product</a>
+            <button class="btn btn-secondary" type="button" id="button-addon2" onclick="addProductModel()">Add New Product</button>
         </div>
         
         <div>
@@ -36,7 +37,79 @@
         </div>
 
     </div>
+        
+    <!-- The Modal UPDATE -->
+    <div id="myModalUpdate" class="modal">
     
+      <!-- Modal content -->
+      <div class="modal-content">
+        <div class="text-center">
+            <h1 class="text-center">Edit Product</h1>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Name</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="updateNameProduct" placeholder="Javascript">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Description</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="updateDescriptionProduct" placeholder="Javascript for ...">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 col-form-label">Price</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="updatePriceProduct" placeholder="4.99">
+                </div>
+            </div>
+
+            <button class="btn btn-danger" onclick="closeModal()" data-bs-dismiss="alert">Close</button>
+            <button class="btn btn-success" onclick="editProduct()" data-bs-dismiss="alert">Edit</button>
+        </div>
+      </div>
+    
+    </div>
+
+    <!-- The Modal ADD -->
+    <div id="myModalAdd" class="modal">
+    
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="text-center">
+          <h1 class="text-center">Add New Product</h1>
+
+          <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="addNameProduct" placeholder="Javascript">
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Description</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="addDescriptionProduct" placeholder="Javascript for ...">
+              </div>
+          </div>
+
+          <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Price</label>
+              <div class="col-sm-10">
+                  <input type="number" class="form-control" id="addPriceProduct" placeholder="4.99">
+              </div>
+          </div>
+
+          <button class="btn btn-danger" onclick="closeModal()" data-bs-dismiss="alert">Close</button>
+          <button class="btn btn-success" onclick="addProduct()" data-bs-dismiss="alert">Add</button>
+      </div>
+    </div>
+  
+  </div>
+
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/requests.js"></script>
